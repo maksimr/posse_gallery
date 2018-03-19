@@ -33,8 +33,8 @@ class RouteManager {
           new DebugOptionsScreen());
 
   Handler categoryHandler =
-      new Handler(handlerFunc: (_, Map<String, dynamic> params) {
-    String categoryName = params["category"];
+      new Handler(handlerFunc: (_, Map<String, List> params) {
+    String categoryName = params["category"][0];
     AppCategory category;
     if (categoryName != null) {
       category = retrieveCategory(categoryName);
